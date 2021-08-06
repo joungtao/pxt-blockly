@@ -2,7 +2,7 @@
 declare module Blockly {
 
   interface BlocklyOptions {
-    toolbox?: HTMLElement | string;
+    toolbox?: HTMLElement | string | null;
     readOnly?: boolean;
     trashcan?: boolean;
     maxTrashcanContents?: number;
@@ -12,6 +12,10 @@ declare module Blockly {
     sounds?: boolean;
     rtl?: boolean;
     horizontalLayout?: boolean;
+    maxBlocks?: number;
+    maxInstances?: {
+      [key: string]: number;
+    };
     toolboxPosition?: string;
     css?: boolean;
     oneBasedIndex?: boolean;

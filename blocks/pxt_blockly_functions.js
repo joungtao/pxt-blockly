@@ -32,6 +32,8 @@
  */
 'use strict';
 
+goog.provide('Blockly.PXTBlockly.FunctionUtils');
+
 Blockly.PXTBlockly.FunctionUtils = {};
 
 /**
