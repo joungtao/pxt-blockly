@@ -770,7 +770,7 @@ Blockly.zelos.ConstantProvider.prototype.createDom = function(svg) {
   Blockly.utils.dom.createSvgElement('feGaussianBlur',
       {
         'in': 'SourceGraphic',
-        'stdDeviation': Blockly.Colours.selectedGlowSize // pxt-blockly
+        'stdDeviation': Blockly.Colours['selectedGlowSize'] // pxt-blockly
       },
       selectedGlowFilter);
   // Set all gaussian blur pixels to 1 opacity before applying flood
@@ -784,7 +784,7 @@ Blockly.zelos.ConstantProvider.prototype.createDom = function(svg) {
   // Color the highlight
   Blockly.utils.dom.createSvgElement('feFlood',
       {
-        'flood-color': Blockly.Colours.selectedGlow, // pxt-blockly
+        'flood-color': Blockly.Colours['selectedGlow'], // pxt-blockly
         'flood-opacity': 1,
         'result': 'outColor'
       },

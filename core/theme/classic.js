@@ -35,9 +35,9 @@ Blockly.Themes.Classic.defaultBlockStyles = {
     "colourPrimary": "20"
   },
   "field_blocks": {
-    "colourPrimary": Blockly.Colours.textField,
-    "colourSecondary": Blockly.Colours.textField,
-    "colourTertiary": Blockly.Colours.textField,
+    "colourPrimary": Blockly.Colours['textField'],
+    "colourSecondary": Blockly.Colours['textField'],
+    "colourTertiary": Blockly.Colours['textField'],
   },
   "list_blocks": {
     "colourPrimary": "260"

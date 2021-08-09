@@ -1008,7 +1008,7 @@ Blockly.BlockSvg.prototype.setInsertionMarker = function(insertionMarker, opt_mi
   }
   this.isInsertionMarker_ = insertionMarker;
   if (this.isInsertionMarker_) {
-    this.setColour(Blockly.Colours.insertionMarker); // TODO shakao needs to be Blockly.INSERTION_MARKER_COLOR ?
+    this.setColour(Blockly.Colours['insertionMarker']); // TODO shakao needs to be Blockly.INSERTION_MARKER_COLOR ?
     this.pathObject.updateInsertionMarker(true);
   }
 };

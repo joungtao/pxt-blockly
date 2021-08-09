@@ -871,8 +871,8 @@ Blockly.Block.prototype.setInsertionMarker = function(insertionMarker) {
   // TODO: handle removing insertion marker status.
   if (this.isInsertionMarker_) {
     // TODO shakao needs to be Blockly.INSERTION_MARKER_COLOUR ?
-    this.setColour(Blockly.Colours.insertionMarker);
-    this.setOpacity(Blockly.Colours.insertionMarkerOpacity);
+    this.setColour(Blockly.Colours['insertionMarker']);
+    this.setOpacity(Blockly.Colours['insertionMarkerOpacity']);
     Blockly.utils.dom.addClass(/** @type {!Element} */ (this.svgGroup_),
         'blocklyInsertionMarker');
   }
@@ -1556,12 +1556,11 @@ Blockly.Block.prototype.jsonInit = function(json) {
  */
 Blockly.Block.prototype.setColourFromRawValues_ = function(primary, secondary,
     tertiary) {
-  // TODO shakao remove goog.isString
-  primary = goog.isString(primary) ?
+  primary = typeof primary == 'string' ?
     Blockly.utils.replaceMessageReferences(primary) : primary;
-  secondary = goog.isString(secondary) ?
+  secondary = typeof secondary == 'string' ?
     Blockly.utils.replaceMessageReferences(secondary) : secondary;
-  tertiary = goog.isString(tertiary) ?
+  tertiary = typeof tertiary == 'string' ?
     Blockly.utils.replaceMessageReferences(tertiary) : tertiary;
 
   this.setColour(primary, secondary, tertiary);

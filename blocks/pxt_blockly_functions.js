@@ -75,7 +75,7 @@ Blockly.PXTBlockly.FunctionUtils.getArgumentIcon = function(typeName) {
 Blockly.PXTBlockly.FunctionUtils.getArgumentDefaultName = function(typeName) {
   var name = Blockly.PXTBlockly.FunctionUtils.argumentDefaultNames &&
       Blockly.PXTBlockly.FunctionUtils.argumentDefaultNames[typeName];
-  return name || Blockly.Msg.FUNCTIONS_DEFAULT_CUSTOM_ARG_NAME;
+  return name || Blockly.Msg['FUNCTIONS_DEFAULT_CUSTOM_ARG_NAME'];
 };
 
 /**
@@ -325,11 +325,11 @@ Blockly.PXTBlockly.FunctionUtils.createAllInputs_ = function(connectionMap) {
     switch (this.type) {
       case Blockly.FUNCTION_CALL_OUTPUT_BLOCK_TYPE:
       case Blockly.FUNCTION_CALL_BLOCK_TYPE:
-        labelText = Blockly.Msg.FUNCTIONS_CALL_TITLE;
+        labelText = Blockly.Msg['FUNCTIONS_CALL_TITLE'];
         break;
       case Blockly.FUNCTION_DEFINITION_BLOCK_TYPE:
       case Blockly.FUNCTION_DECLARATION_BLOCK_TYPE:
-        labelText = Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE;
+        labelText = Blockly.Msg['PROCEDURES_DEFNORETURN_TITLE'];
     }
     this.appendDummyInput('function_title').appendField(labelText, 'function_title');
   }
@@ -810,7 +810,7 @@ Blockly.PXTBlockly.FunctionUtils.addParam_ = function(typeName, defaultName) {
  * @public
  */
 Blockly.PXTBlockly.FunctionUtils.addBooleanExternal = function() {
-  this.addParam_('boolean', Blockly.Msg.FUNCTIONS_DEFAULT_BOOLEAN_ARG_NAME);
+  this.addParam_('boolean', Blockly.Msg['FUNCTIONS_DEFAULT_BOOLEAN_ARG_NAME']);
 };
 
 /**
@@ -819,7 +819,7 @@ Blockly.PXTBlockly.FunctionUtils.addBooleanExternal = function() {
  * @public
  */
 Blockly.PXTBlockly.FunctionUtils.addStringExternal = function() {
-  this.addParam_('string', Blockly.Msg.FUNCTIONS_DEFAULT_STRING_ARG_NAME);
+  this.addParam_('string', Blockly.Msg['FUNCTIONS_DEFAULT_STRING_ARG_NAME']);
 };
 
 /**
@@ -828,7 +828,7 @@ Blockly.PXTBlockly.FunctionUtils.addStringExternal = function() {
  * @public
  */
 Blockly.PXTBlockly.FunctionUtils.addNumberExternal = function() {
-  this.addParam_('number', Blockly.Msg.FUNCTIONS_DEFAULT_NUMBER_ARG_NAME);
+  this.addParam_('number', Blockly.Msg['FUNCTIONS_DEFAULT_NUMBER_ARG_NAME']);
 };
 
 /**
@@ -837,7 +837,7 @@ Blockly.PXTBlockly.FunctionUtils.addNumberExternal = function() {
  * @public
  */
 Blockly.PXTBlockly.FunctionUtils.addArrayExternal = function() {
-  this.addParam_('Array', Blockly.Msg.FUNCTIONS_DEFAULT_ARRAY_ARG_NAME);
+  this.addParam_('Array', Blockly.Msg['FUNCTIONS_DEFAULT_ARRAY_ARG_NAME']);
 }
 
 /**
@@ -974,7 +974,7 @@ Blockly.Blocks['function_declaration'] = {
     this.functionId_ = ""; // An ID, independent from the block ID, to track a function across its call, definition and declaration blocks.
 
     this.createAllInputs_();
-    this.setColour(Blockly.Msg.PROCEDURES_HUE);
+    this.setColour(Blockly.Msg['PROCEDURES_HUE']);
     this.setStatements_(true);
     this.setDeletable(false);
     this.setMovable(false);
@@ -1032,9 +1032,9 @@ Blockly.Blocks['function_definition'] = {
     this.functionId_ = ""; // An ID, independent from the block ID, to track a function across its call, definition and declaration blocks.
 
     this.createAllInputs_();
-    this.setColour(Blockly.Msg.PROCEDURES_HUE);
-    this.setTooltip(Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);
+    this.setColour(Blockly.Msg['PROCEDURES_HUE']);
+    this.setTooltip(Blockly.Msg['PROCEDURES_DEFNORETURN_TOOLTIP']);
+    this.setHelpUrl(Blockly.Msg['PROCEDURES_DEFNORETURN_HELPURL']);
     this.setStatements_(true);
     this.createCollapseIcon_();
     this.setInputsInline(true);
@@ -1087,9 +1087,9 @@ Blockly.Blocks['function_call'] = {
 
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour(Blockly.Msg.PROCEDURES_HUE);
-    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL);
-    this.setTooltip(Blockly.Msg.FUNCTION_CALL_TOOLTIP);
+    this.setColour(Blockly.Msg['PROCEDURES_HUE']);
+    this.setHelpUrl(Blockly.Msg['PROCEDURES_CALLNORETURN_HELPURL']);
+    this.setTooltip(Blockly.Msg['FUNCTION_CALL_TOOLTIP']);
     this.setInputsInline(true);
   },
   // Shared.
@@ -1135,9 +1135,9 @@ Blockly.Blocks['function_call_output'] = {
     this.setNextStatement(false);
     this.setOutput(true, null);
     this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
-    this.setColour(Blockly.Msg.PROCEDURES_HUE);
-    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL);
-    this.setTooltip(Blockly.Msg.FUNCTION_CALL_TOOLTIP);
+    this.setColour(Blockly.Msg['PROCEDURES_HUE']);
+    this.setHelpUrl(Blockly.Msg['PROCEDURES_CALLNORETURN_HELPURL']);
+    this.setTooltip(Blockly.Msg['FUNCTION_CALL_TOOLTIP']);
     this.setInputsInline(true);
   },
   // Shared.
@@ -1253,9 +1253,9 @@ Blockly.Blocks['argument_editor_boolean'] = {
           "text": "bool"
         }
       ],
-      "colour": Blockly.Colours.textField,
-      "colourSecondary": Blockly.Colours.textField,
-      "colourTertiary": Blockly.Colours.textField,
+      "colour": Blockly.Colours['textField'],
+      "colourSecondary": Blockly.Colours['textField'],
+      "colourTertiary": Blockly.Colours['textField'],
       "extensions": ["output_boolean"]
     });
     this.typeName_ = 'boolean';
@@ -1275,9 +1275,9 @@ Blockly.Blocks['argument_editor_string'] = {
           "text": "text"
         }
       ],
-      "colour": Blockly.Colours.textField,
-      "colourSecondary": Blockly.Colours.textField,
-      "colourTertiary": Blockly.Colours.textField,
+      "colour": Blockly.Colours['textField'],
+      "colourSecondary": Blockly.Colours['textField'],
+      "colourTertiary": Blockly.Colours['textField'],
       "extensions": ["output_string"]
     });
     this.typeName_ = 'string';
@@ -1297,9 +1297,9 @@ Blockly.Blocks['argument_editor_number'] = {
           "text": "num"
         }
       ],
-      "colour": Blockly.Colours.textField,
-      "colourSecondary": Blockly.Colours.textField,
-      "colourTertiary": Blockly.Colours.textField,
+      "colour": Blockly.Colours['textField'],
+      "colourSecondary": Blockly.Colours['textField'],
+      "colourTertiary": Blockly.Colours['textField'],
       "extensions": ["output_number"]
     });
     this.typeName_ = 'number';
@@ -1319,9 +1319,9 @@ Blockly.Blocks['argument_editor_array'] = {
           "text": "list"
         }
       ],
-      "colour": Blockly.Colours.textField,
-      "colourSecondary": Blockly.Colours.textField,
-      "colourTertiary": Blockly.Colours.textField,
+      "colour": Blockly.Colours['textField'],
+      "colourSecondary": Blockly.Colours['textField'],
+      "colourTertiary": Blockly.Colours['textField'],
       "extensions": ["output_array"]
     });
     this.typeName_ = 'Array';
@@ -1341,9 +1341,9 @@ Blockly.Blocks['argument_editor_custom'] = {
           "text": "arg"
         }
       ],
-      "colour": Blockly.Colours.textField,
-      "colourSecondary": Blockly.Colours.textField,
-      "colourTertiary": Blockly.Colours.textField,
+      "colour": Blockly.Colours['textField'],
+      "colourSecondary": Blockly.Colours['textField'],
+      "colourTertiary": Blockly.Colours['textField'],
       "outputShape": Blockly.OUTPUT_SHAPE_ROUND
     });
     this.typeName_ = 'any';
@@ -1367,7 +1367,7 @@ Blockly.Blocks['argument_reporter_boolean'] = {
           "text": ""
         }
       ],
-      "colour": Blockly.Msg.REPORTERS_HUE,
+      "colour": Blockly.Msg['REPORTERS_HUE'],
       "extensions": ["output_boolean"]
     });
     this.typeName_ = 'boolean';
@@ -1386,7 +1386,7 @@ Blockly.Blocks['argument_reporter_number'] = {
           "text": ""
         }
       ],
-      "colour": Blockly.Msg.REPORTERS_HUE,
+      "colour": Blockly.Msg['REPORTERS_HUE'],
       "extensions": ["output_number"]
     });
     this.typeName_ = 'number';
@@ -1405,7 +1405,7 @@ Blockly.Blocks['argument_reporter_string'] = {
           "text": ""
         }
       ],
-      "colour": Blockly.Msg.REPORTERS_HUE,
+      "colour": Blockly.Msg['REPORTERS_HUE'],
       "extensions": ["output_string"]
     });
     this.typeName_ = 'string';
@@ -1424,7 +1424,7 @@ Blockly.Blocks['argument_reporter_array'] = {
           "text": ""
         }
       ],
-      "colour": Blockly.Msg.REPORTERS_HUE,
+      "colour": Blockly.Msg['REPORTERS_HUE'],
       "extensions": ["output_array"]
     });
     this.typeName_ = 'Array';
@@ -1443,7 +1443,7 @@ Blockly.Blocks['argument_reporter_custom'] = {
           "text": ""
         }
       ],
-      "colour": Blockly.Msg.REPORTERS_HUE,
+      "colour": Blockly.Msg['REPORTERS_HUE'],
       "inputsInline": true,
       "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
       "output": null

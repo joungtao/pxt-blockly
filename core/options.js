@@ -322,14 +322,14 @@ Blockly.Options.parseZoomOptions_ = function(options) {
 Blockly.Options.parseGridOptions_ = function(options) {
   var grid = options['grid'] || {};
   var gridOptions = {};
-  gridOptions.spacing = Number(grid['spacing']) || 0;
-  gridOptions.colour = grid['colour'] || '#888';
-  gridOptions.length =
+  gridOptions['spacing'] = Number(grid['spacing']) || 0;
+  gridOptions['colour'] = grid['colour'] || '#888';
+  gridOptions['length'] =
       (grid['length'] === undefined) ? 1 : Number(grid['length']);
-  gridOptions.snap = gridOptions.spacing > 0 && !!grid['snap'];
+  gridOptions['snap'] = gridOptions['spacing'] > 0 && !!grid['snap'];
 
   // pxt-blockly: specify custom image bg for workspace
-  gridOptions.image = Blockly.Options.parseGridImageOptions_(grid);
+  gridOptions['image'] = Blockly.Options.parseGridImageOptions_(grid);
   return gridOptions;
 };
 

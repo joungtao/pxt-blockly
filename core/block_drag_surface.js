@@ -137,7 +137,7 @@ Blockly.BlockDragSurfaceSvg.prototype.createDropShadowDom_ = function(defs) {
   // Shadow opacity is specified in the adjustable colour library,
   // since the darkness of the shadow largely depends on the workspace colour.
   Blockly.utils.dom.createSvgElement('feFuncA',
-    {'type': 'linear', 'slope': Blockly.Colours.dragShadowOpacity}, componentTransfer);
+    {'type': 'linear', 'slope': Blockly.Colours['dragShadowOpacity']}, componentTransfer);
   Blockly.utils.dom.createSvgElement('feComposite',
     {'in': 'SourceGraphic', 'in2': 'offsetBlur', 'operator': 'over'}, dragShadowFilter);
   return dragShadowFilter.id;

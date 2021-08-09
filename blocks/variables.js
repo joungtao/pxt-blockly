@@ -148,13 +148,13 @@ Blockly.Constants.Variables.CUSTOM_CONTEXT_MENU_VARIABLE_GETTER_SETTER_MIXIN = {
     } else {
       if (this.type == 'variables_get' || this.type == 'variables_get_reporter') {
         var renameOption = {
-          text: Blockly.Msg.RENAME_VARIABLE,
+          text: Blockly.Msg['RENAME_VARIABLE'],
           enabled: !this.inDebugWorkspace(),
           callback: Blockly.Constants.Variables.RENAME_OPTION_CALLBACK_FACTORY(this)
         };
         var name = this.getField('VAR').getText();
         var deleteOption = {
-          text: Blockly.Msg.DELETE_VARIABLE.replace('%1', name),
+          text: Blockly.Msg['DELETE_VARIABLE'].replace('%1', name),
           enabled: !this.inDebugWorkspace(),
           callback: Blockly.Constants.Variables.DELETE_OPTION_CALLBACK_FACTORY(this)
         };
@@ -186,7 +186,7 @@ Blockly.Constants.Variables.CUSTOM_CONTEXT_MENU_VARIABLE_REPORTER_MIXIN = {
       return;
     }
     var renameOption = {
-      text: Blockly.Msg.RENAME_VARIABLE,
+      text: Blockly.Msg['RENAME_VARIABLE'],
       enabled: !this.inDebugWorkspace(),
       callback: Blockly.Constants.Variables.RENAME_OPTION_CALLBACK_FACTORY(this)
     };

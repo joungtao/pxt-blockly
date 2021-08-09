@@ -111,7 +111,7 @@ Blockly.Functions.flyoutCategory = function(workspace) {
  */
 Blockly.Functions.addCreateButton_ = function(workspace, xmlList) {
   var button = document.createElement('button');
-  var msg = Blockly.Msg.FUNCTION_CREATE_NEW;
+  var msg = Blockly.Msg['FUNCTION_CREATE_NEW'];
   var callbackKey = 'CREATE_FUNCTION';
   var callback = function() {
     Blockly.Functions.createFunctionCallback_(workspace);
@@ -214,7 +214,7 @@ Blockly.Functions.isCustomType = function(argumentType) {
  */
 Blockly.Functions.newFunctionMutation = function(destWs) {
   // Ensure the default function name is unique.
-  var defaultName = Blockly.Functions.findLegalName(Blockly.Msg.FUNCTIONS_DEFAULT_FUNCTION_NAME, destWs);
+  var defaultName = Blockly.Functions.findLegalName(Blockly.Msg['FUNCTIONS_DEFAULT_FUNCTION_NAME'], destWs);
 
   // <block type="function_definition">
   //   <mutation name="myFunc" functionid="..."></mutation>
@@ -385,7 +385,7 @@ Blockly.Functions.editFunctionExternalHandler = function(mutation, callback) {
 Blockly.Functions.makeEditOption = function(block) {
   var editOption = {
     enabled: !block.inDebugWorkspace(),
-    text: Blockly.Msg.FUNCTIONS_EDIT_OPTION,
+    text: Blockly.Msg['FUNCTIONS_EDIT_OPTION'],
     callback: function() {
       Blockly.Functions.editFunctionCallback_(block);
     }
@@ -410,7 +410,7 @@ Blockly.Functions.makeCreateCallOption = function(block) {
 
   var option = {
     enabled: block.workspace.remainingCapacity() > 0 && !block.inDebugWorkspace(),
-    text: Blockly.Msg.FUNCTIONS_CREATE_CALL_OPTION.replace("%1", functionName),
+    text: Blockly.Msg['FUNCTIONS_CREATE_CALL_OPTION'].replace("%1", functionName),
     callback: Blockly.ContextMenu.callbackFactory(block, callBlock),
   };
   return option;
@@ -419,7 +419,7 @@ Blockly.Functions.makeCreateCallOption = function(block) {
 Blockly.Functions.makeGoToDefinitionOption = function(block) {
   var gtdOption = {
     enabled: !block.inDebugWorkspace(),
-    text: Blockly.Msg.FUNCTIONS_GO_TO_DEFINITION_OPTION,
+    text: Blockly.Msg['FUNCTIONS_GO_TO_DEFINITION_OPTION'],
     callback: function() {
       var functionName = block.getField("function_name").getText();
       var definition = Blockly.Functions.getDefinition(functionName, block.workspace);
@@ -560,7 +560,7 @@ Blockly.Functions.validateFunctionExternal = function(mutation, destinationWs) {
   var funcName = mutation.getAttribute('name');
 
   if (!funcName) {
-    Blockly.alert(Blockly.Msg.FUNCTION_WARNING_EMPTY_NAME);
+    Blockly.alert(Blockly.Msg['FUNCTION_WARNING_EMPTY_NAME']);
     return false;
   }
 
@@ -570,11 +570,11 @@ Blockly.Functions.validateFunctionExternal = function(mutation, destinationWs) {
     var arg = mutation.childNodes[i];
     var argName = arg.getAttribute('name');
     if (!argName) {
-      Blockly.alert(Blockly.Msg.FUNCTION_WARNING_EMPTY_NAME);
+      Blockly.alert(Blockly.Msg['FUNCTION_WARNING_EMPTY_NAME']);
       return false;
     }
     if (seen[argName]) {
-      Blockly.alert(Blockly.Msg.FUNCTION_WARNING_DUPLICATE_ARG);
+      Blockly.alert(Blockly.Msg['FUNCTION_WARNING_DUPLICATE_ARG']);
       return false;
     }
     seen[argName] = true;
@@ -582,7 +582,7 @@ Blockly.Functions.validateFunctionExternal = function(mutation, destinationWs) {
 
   // Check for function name also being an argument name.
   if (seen[funcName]) {
-    Blockly.alert(Blockly.Msg.FUNCTION_WARNING_ARG_NAME_IS_FUNCTION_NAME);
+    Blockly.alert(Blockly.Msg['FUNCTION_WARNING_ARG_NAME_IS_FUNCTION_NAME']);
     return false;
   }
 
@@ -591,7 +591,7 @@ Blockly.Functions.validateFunctionExternal = function(mutation, destinationWs) {
   var usedNames = Blockly.Functions.namesInUse(destinationWs, null, funcId);
 
   if (usedNames[funcName]) {
-    Blockly.alert(Blockly.Msg.VARIABLE_ALREADY_EXISTS.replace('%1', funcName));
+    Blockly.alert(Blockly.Msg['VARIABLE_ALREADY_EXISTS'].replace('%1', funcName));
     return false;
   }
 

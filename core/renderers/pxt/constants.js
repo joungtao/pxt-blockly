@@ -159,7 +159,7 @@ Blockly.pxt.ConstantProvider.prototype.createDom = function(svg) {
   Blockly.utils.dom.createSvgElement('feGaussianBlur',
       {
         'in': 'SourceGraphic',
-        'stdDeviation': Blockly.Colours.highlightGlowSize
+        'stdDeviation': Blockly.Colours['highlightGlowSize']
       },
       highlightGlowFilter);
   // Set all gaussian blur pixels to 1 opacity before applying flood
@@ -171,8 +171,8 @@ Blockly.pxt.ConstantProvider.prototype.createDom = function(svg) {
       highlightComponentTransfer);
   // Color the highlight
   Blockly.utils.dom.createSvgElement('feFlood',
-      {'flood-color': Blockly.Colours.highlightGlow,
-        'flood-opacity': Blockly.Colours.highlightGlowOpacity, 'result': 'outColor'}, highlightGlowFilter);
+      {'flood-color': Blockly.Colours['highlightGlow'],
+        'flood-opacity': Blockly.Colours['highlightGlowOpacity'], 'result': 'outColor'}, highlightGlowFilter);
   Blockly.utils.dom.createSvgElement('feComposite',
       {'in': 'outColor', 'in2': 'outBlur',
         'operator': 'in', 'result': 'outGlow'}, highlightGlowFilter);
@@ -192,7 +192,7 @@ Blockly.pxt.ConstantProvider.prototype.createDom = function(svg) {
   Blockly.utils.dom.createSvgElement('feGaussianBlur',
       {
         'in': 'SourceGraphic',
-        'stdDeviation': Blockly.Colours.warningGlowSize
+        'stdDeviation': Blockly.Colours['warningGlowSize']
       },
       warningGlowFilter);
   // Set all gaussian blur pixels to 1 opacity before applying flood
@@ -204,8 +204,8 @@ Blockly.pxt.ConstantProvider.prototype.createDom = function(svg) {
       warningComponentTransfer);
   // Color the highlight
   Blockly.utils.dom.createSvgElement('feFlood',
-      {'flood-color': Blockly.Colours.warningGlow,
-        'flood-opacity': Blockly.Colours.warningGlowOpacity, 'result': 'outColor'}, warningGlowFilter);
+      {'flood-color': Blockly.Colours['warningGlow'],
+        'flood-opacity': Blockly.Colours['warningGlowOpacity'], 'result': 'outColor'}, warningGlowFilter);
   Blockly.utils.dom.createSvgElement('feComposite',
       {'in': 'outColor', 'in2': 'outBlur',
         'operator': 'in', 'result': 'outGlow'}, warningGlowFilter);

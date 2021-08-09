@@ -2187,7 +2187,7 @@ Blockly.WorkspaceSvg.prototype.centerOnBlock = function(id, animate) {
   var blockCanvas = this.svgBlockCanvas_;
   setTimeout(function() {
     Blockly.utils.dom.removeClass(blockCanvas, 'blocklyTransitioning');
-  }, Blockly.Colours.canvasTransitionLength);
+  }, Blockly.Colours['canvasTransitionLength']);
 };
 
 /**

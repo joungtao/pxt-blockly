@@ -53,17 +53,17 @@ Blockly.Blocks['controls_if'] = {
     Blockly.Extensions.apply('inline-svgs', this, false);
     this.elseifCount_ = 0;
     this.elseCount_ = 0;
-    this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
+    this.setHelpUrl(Blockly.Msg['CONTROLS_IF_HELPURL']);
     this.appendValueInput('IF0')
         .setCheck('Boolean')
-        .appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);
+        .appendField(Blockly.Msg['CONTROLS_IF_MSG_IF']);
     this.appendDummyInput('THEN0')
-        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+        .appendField(Blockly.Msg['CONTROLS_IF_MSG_THEN']);
     this.appendStatementInput('DO0');
     this.setOutputShape(Blockly.OUTPUT_SHAPE_HEXAGONAL);
     this.updateShape_();
     this.setInputsInline(true);
-    this.setColour(Blockly.Msg.LOGIC_HUE);
+    this.setColour(Blockly.Msg['LOGIC_HUE']);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     Blockly.Constants.Logic.CONTROLS_IF_TOOLTIP_EXTENSION.call(this);
@@ -219,9 +219,9 @@ Blockly.Blocks['controls_if'] = {
       }(i);
       this.appendValueInput('IF' + i)
           .setCheck('Boolean')
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSEIF);
+          .appendField(Blockly.Msg['CONTROLS_IF_MSG_ELSEIF']);
       this.appendDummyInput('IFTITLE' + i)
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+          .appendField(Blockly.Msg['CONTROLS_IF_MSG_THEN']);
       this.appendDummyInput('IFBUTTONS' + i)
           .appendField(
               new Blockly.FieldImage(this.REMOVE_IMAGE_DATAURI, 24, 24, "*", removeElseIf, false))
@@ -230,7 +230,7 @@ Blockly.Blocks['controls_if'] = {
     }
     if (this.elseCount_) {
       this.appendDummyInput('ELSETITLE')
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
+          .appendField(Blockly.Msg['CONTROLS_IF_MSG_ELSE']);
       this.appendDummyInput('ELSEBUTTONS')
           .setAlign(Blockly.ALIGN_RIGHT)
           .appendField(

@@ -142,7 +142,7 @@ Blockly.FieldNumber.NUMPAD_DELETE_ICON = "data:image/svg+xml,%3Csvg " +
   ".41,1,1,0,0,1-.71.3,1,1,0,0,1-.71-0.3L23,21.41l-2.73,2.73a1,1,0,0" +
   ",1-1.41,0,1,1,0,0,1,0-1.41L21.59,20l-2.73-2.73a1,1,0,0,1,0-1.41,1" +
   ",1,0,0,1,1.41,0L23,18.59l2.73-2.73a1,1,0,1,1,1.42,1.41L24.42,20Z'" +
-  " fill='%23" + Blockly.Colours.numPadText.substr(1) + "'/%3E%3C/svg%3E"
+  " fill='%23" + Blockly.Colours['numPadText'].substr(1) + "'/%3E%3C/svg%3E"
 /**
  * Currently active field during an edit.
  * Used to give a reference to the num-pad button callbacks.
@@ -369,9 +369,9 @@ Blockly.FieldNumber.prototype.showNumPad_ = function() {
 
   // Set colour and size of drop-down
   var numPadBackground = this.sourceBlock_.parentBlock_ ?
-    this.sourceBlock_.parentBlock_.getColour() : Blockly.Colours.numPadBackground;
+    this.sourceBlock_.parentBlock_.getColour() : Blockly.Colours['numPadBackground'];
   var numPadBorder = this.sourceBlock_.parentBlock_ ?
-    this.sourceBlock_.parentBlock_.style.colourTertiary : Blockly.Colours.numPadBorder;
+    this.sourceBlock_.parentBlock_.style.colourTertiary : Blockly.Colours['numPadBorder'];
   Blockly.DropDownDiv.setColour(numPadBackground, numPadBorder);
   contentDiv.style.width = Blockly.FieldNumber.DROPDOWN_WIDTH + 'px';
 
@@ -388,7 +388,7 @@ Blockly.FieldNumber.prototype.showNumPad_ = function() {
  */
 Blockly.FieldNumber.prototype.addButtons_ = function(contentDiv) {
   var buttonColour = this.sourceBlock_.parentBlock_ ?
-    this.sourceBlock_.parentBlock_.getColour() : Blockly.Colours.numPadBackground;
+    this.sourceBlock_.parentBlock_.getColour() : Blockly.Colours['numPadBackground'];
   var buttonBorderColour = this.sourceBlock_.parentBlock_ ?
     this.sourceBlock_.parentBlock_.style.colourTertiary :
     this.sourceBlock_.style.colourTertiary;

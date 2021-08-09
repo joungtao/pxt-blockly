@@ -231,7 +231,7 @@ Blockly.Css.CONTENT = [
     'border-color: #dadce0;',
     'background-color: #fff;',
     'border-radius: 2px;',
-    'box-shadow: 0px 0px 8px 1px ' + Blockly.Colours.dropDownShadow + ';',
+    'box-shadow: 0px 0px 8px 1px ' + Blockly.Colours['dropDownShadow'] + ';',
     'padding: 4px;',
     'box-shadow: 0px 0px 3px 1px rgba(0,0,0,.3);',
   '}',
@@ -270,11 +270,11 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.blocklyDropDownButtonHover {',
-    'box-shadow: 0px 0px 0px 4px ' + Blockly.Colours.fieldShadow + ';',
+    'box-shadow: 0px 0px 0px 4px ' + Blockly.Colours['fieldShadow'] + ';',
   '}',
 
   '.blocklyDropDownButton:active {',
-    'box-shadow: 0px 0px 0px 6px ' + Blockly.Colours.fieldShadow + ';',
+    'box-shadow: 0px 0px 0px 6px ' + Blockly.Colours['fieldShadow'] + ';',
   '}',
 
   '.blocklyDropDownButton > img {',
