@@ -246,7 +246,7 @@ Blockly.utils.dom.stopTextWidthCache = function() {
  * @return {number} Width of element.
  */
 Blockly.utils.dom.getTextWidth = function(textElement) {
-  var key = textElement.textContent + '\n' + textElement.className.baseVal;
+  var key = textElement.textContent + '\n' + textElement.className['baseVal'];
   var width;
 
   // Return the cached width if it exists.
@@ -260,9 +260,9 @@ Blockly.utils.dom.getTextWidth = function(textElement) {
   // Attempt to compute fetch the width of the SVG text element.
   try {
     if (Blockly.utils.userAgent.IE || Blockly.utils.userAgent.EDGE) {
-      width = textElement.getBBox().width;
+      width = textElement['getBBox']().width;
     } else {
-      width = textElement.getComputedTextLength();
+      width = textElement['getComputedTextLength']();
     }
   } catch (e) {
     // In other cases where we fail to get the computed text. Instead, use an

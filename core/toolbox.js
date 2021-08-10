@@ -565,8 +565,8 @@ Blockly.Toolbox.prototype.setColourFromStyle_ = function(
   var theme = this.workspace_.getTheme();
   if (styleName && theme) {
     var style = theme.categoryStyles[styleName];
-    if (style && style.colour) {
-      this.setColour_(style.colour, childOut, categoryName);
+    if (style && style['colour']) {
+      this.setColour_(style['colour'], childOut, categoryName);
     } else {
       console.warn('Style "' + styleName +
           '" must exist and contain a colour value');
