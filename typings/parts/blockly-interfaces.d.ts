@@ -75,6 +75,14 @@ declare module Blockly {
     viewWidth: number;
   }
 
+  namespace Themes {
+    var Classic: Blockly.Theme;
+    var Dark: Blockly.Theme;
+    var Deuteranopia: Blockly.Theme;
+    var HighContrast: Blockly.Theme;
+    var Tritanopia: Blockly.Theme;
+  }
+
   // pxt-blockly specific
   namespace ContextMenu {
     interface Option {

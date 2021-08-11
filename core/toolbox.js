@@ -99,16 +99,16 @@ Blockly.Toolbox = function(workspace) {
   };
 
   if (this.horizontalLayout_) {
-    this.config_['cssTreeRow'] =
-        this.config_['cssTreeRow'] +
+    this.config_.cssTreeRow =
+        this.config_.cssTreeRow +
         (workspace.RTL ?
         ' blocklyHorizontalTreeRtl' : ' blocklyHorizontalTree');
 
-    this.treeSeparatorConfig_['cssTreeRow'] =
+    this.treeSeparatorConfig_.cssTreeRow =
         'blocklyTreeSeparatorHorizontal ' +
         (workspace.RTL ?
         'blocklyHorizontalTreeRtl' : 'blocklyHorizontalTree');
-    this.config_['cssTreeIcon'] = '';
+    this.config_.cssTreeIcon = '';
   }
 
   /**
