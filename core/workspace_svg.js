@@ -1983,11 +1983,11 @@ Blockly.WorkspaceSvg.prototype.zoom = function(x, y, amount) {
   // Transform the x/y coordinates from the parentSVG's space into the
   // canvas' space, so that they are in workspace units relative to the top
   // left of the visible portion of the workspace.
-  var matrix = this.getCanvas().getCTM();
-  var center = this.getParentSvg().createSVGPoint();
+  var matrix = this.getCanvas()['getCTM']();
+  var center = this.getParentSvg()['createSVGPoint']();
   center.x = x;
   center.y = y;
-  center = center.matrixTransform(matrix.inverse());
+  center = center['matrixTransform'](matrix.inverse());
   x = center.x;
   y = center.y;
 

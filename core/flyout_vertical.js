@@ -78,7 +78,7 @@ Blockly.VerticalFlyout.prototype.getMetrics_ = function() {
   }
 
   try {
-    var optionBox = this.workspace_.getCanvas().getBBox();
+    var optionBox = this.workspace_.getCanvas()['getBBox']();
   } catch (e) {
     // Firefox has trouble with hidden elements (Bug 528969).
     var optionBox = {height: 0, y: 0, width: 0, x: 0};

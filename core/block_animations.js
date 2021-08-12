@@ -57,7 +57,7 @@ Blockly.blockAnimations.disposeUiEffect = function(block) {
   clone.translateY_ = xy.y;
   clone.setAttribute('transform', 'translate(' + xy.x + ',' + xy.y + ')');
   workspace.getParentSvg().appendChild(clone);
-  clone.bBox_ = clone.getBBox();
+  clone.bBox_ = clone['getBBox']();
   // Start the animation.
   Blockly.blockAnimations.disposeUiStep_(clone, workspace.RTL, new Date,
       workspace.scale);

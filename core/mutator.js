@@ -227,7 +227,7 @@ Blockly.Mutator.prototype.updateEditable = function() {
  */
 Blockly.Mutator.prototype.resizeBubble_ = function() {
   var doubleBorderWidth = 2 * Blockly.Bubble.BORDER_WIDTH;
-  var workspaceSize = this.workspace_.getCanvas().getBBox();
+  var workspaceSize = this.workspace_.getCanvas()['getBBox']();
   var width;
   if (this.block_.RTL) {
     width = -workspaceSize.x;

@@ -266,7 +266,7 @@ Blockly.DropDownDiv.showPositionedByField = function(field,
  */
 Blockly.DropDownDiv.getScaledBboxOfBlock_ = function(block) {
   var blockSvg = block.getSvgRoot();
-  var bBox = blockSvg.getBBox();
+  var bBox = blockSvg['getBBox']();
   var scale = block.workspace.scale;
   var scaledHeight = bBox.height * scale;
   var scaledWidth = bBox.width * scale;

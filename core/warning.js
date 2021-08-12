@@ -141,7 +141,7 @@ Blockly.Warning.prototype.createBubble = function() {
   if (this.block_.RTL) {
     // Right-align the paragraph.
     // This cannot be done until the bubble is rendered on screen.
-    var maxWidth = this.paragraphElement_.getBBox().width;
+    var maxWidth = this.paragraphElement_['getBBox']().width;
     for (var i = 0, textElement;
       (textElement = this.paragraphElement_.childNodes[i]); i++) {
 
