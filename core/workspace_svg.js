@@ -549,7 +549,8 @@ Blockly.WorkspaceSvg.prototype.refreshTheme = function() {
   // Update all blocks in workspace that have a style name.
   this.updateBlockStyles_(this.getAllBlocks(false).filter(
       function(block) {
-        return block.getStyleName() !== undefined;
+        var style_name = block.getStyleName();
+        return style_name !== undefined && !style_name.match(/^auto_#[A-Fa-f0-9]{6}$/);
       }
   ));
 
